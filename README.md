@@ -8,6 +8,7 @@ $$
         {\rm Poiss}(n^j|(\mu n_s^j + n_b^j)(1 + \theta^j\sigma_b^j))\right] \cdot
         \prod_{k\in{\rm nuis}}\mathcal{N}(\theta^k | 0, 1)
 $$
+
 Here $n$ stands for the data, $n_s$ and $n_b$ are the signal and background yields, $\sigma_b$
 are the background uncertainties. $\mu$ is the parameter of interest and $\theta$ are the nuisance parameters.
 
