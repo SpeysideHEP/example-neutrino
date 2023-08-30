@@ -12,22 +12,31 @@ $$
 Here $n$ stands for the data, $n_s$ and $n_b$ are the signal and background yields, $\sigma_b$
 are the background uncertainties. $\mu$ is the parameter of interest and $\theta$ are the nuisance parameters.
 
-This plug-in can be installed via
+This plug-in can be installed from GitHub with `pip`
 
 ```
-pip install -e .
+python -m pip install --upgrade "git+https://github.com/SpeysideHEP/example-neutrino"
+```
+
+or from the locally cloned repository
+
+```
+python -m pip install --upgrade .
 ```
 
 command and can be used with ``spey.get_backend("example.neutrino")`` function.
 
 ```python
+import numpy as np
+import spey
+
 pdf_wrapper = spey.get_backend("example.neutrino")
 stat_model = pdf_wrapper(
-    signal_yields = np.array([12,15]),
-    background_yields = np.array([50., 48.]),
-    data = np.array([38, 47]),
-    absolute_uncertainties=np.array([11,25]),
+    signal_yields=np.array([12, 15]),
+    background_yields=np.array([50.0, 48.0]),
+    data=np.array([38, 47]),
+    absolute_uncertainties=np.array([11, 25]),
 )
 stat_model.likelihood()
-# 112.46105983767956
+# 7.42425771274118
 ```
